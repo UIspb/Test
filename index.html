@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArtPrints - Эксклюзивные художественные принты</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loader">
+        <div class="loader-inner">
+            <div class="loader-line"></div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="#" class="logo-link">
+                        <span class="logo-text">ArtPrints</span>
+                    </a>
+                </div>
+                
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="#home" class="nav-link">Главная</a></li>
+                        <li class="nav-item"><a href="#gallery" class="nav-link">Галерея</a></li>
+                        <li class="nav-item"><a href="#about" class="nav-link">О нас</a></li>
+                        <li class="nav-item"><a href="#contact" class="nav-link">Контакты</a></li>
+                    </ul>
+                </nav>
+
+                <div class="header-actions">
+                    <button class="cart-btn">
+                        <span class="cart-icon">🛒</span>
+                        <span class="cart-count">0</span>
+                    </button>
+                    <div class="menu-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="mobile-menu-content">
+            <nav class="mobile-nav">
+                <ul class="mobile-nav-list">
+                    <li class="mobile-nav-item"><a href="#home" class="mobile-nav-link">Главная</a></li>
+                    <li class="mobile-nav-item"><a href="#gallery" class="mobile-nav-link">Галерея</a></li>
+                    <li class="mobile-nav-item"><a href="#about" class="mobile-nav-link">О нас</a></li>
+                    <li class="mobile-nav-item"><a href="#contact" class="mobile-nav-link">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-background">
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1 class="hero-title">
+                            <span class="title-line">Эксклюзивные</span>
+                            <span class="title-line">художественные</span>
+                            <span class="title-line">принты</span>
+                        </h1>
+                        <p class="hero-description">
+                            Откройте для себя уникальную коллекцию современного искусства. 
+                            Каждый принт - это произведение искусства высочайшего качества.
+                        </p>
+                        <div class="hero-buttons">
+                            <a href="#gallery" class="btn btn-primary">Посмотреть галерею</a>
+                            <a href="#about" class="btn btn-outline">Узнать больше</a>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <div class="hero-image-container">
+                            <img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2058&q=80" alt="Art Print" class="hero-img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <div class="scroll-line"></div>
+                <span class="scroll-text">Прокрутите вниз</span>
+            </div>
+        </section>
+
+        <!-- Featured Section -->
+        <section class="featured">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Рекомендуемые работы</h2>
+                    <p class="section-subtitle">Тщательно отобранные произведения искусства</p>
+                </div>
+                <div class="featured-grid">
+                    <div class="featured-item">
+                        <div class="featured-image">
+                            <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Abstract Art 1">
+                            <div class="featured-overlay">
+                                <button class="btn-view">Подробнее</button>
+                            </div>
+                        </div>
+                        <div class="featured-info">
+                            <h3 class="featured-title">Абстрактная композиция #1</h3>
+                            <p class="featured-price">2 500 ₽</p>
+                        </div>
+                    </div>
+                    <div class="featured-item">
+                        <div class="featured-image">
+                            <img src="https://images.unsplash.com/photo-1549490349-8643362247b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Abstract Art 2">
+                            <div class="featured-overlay">
+                                <button class="btn-view">Подробнее</button>
+                            </div>
+                        </div>
+                        <div class="featured-info">
+                            <h3 class="featured-title">Минимализм в цвете</h3>
+                            <p class="featured-price">1 800 ₽</p>
+                        </div>
+                    </div>
+                    <div class="featured-item">
+                        <div class="featured-image">
+                            <img src="https://images.unsplash.com/photo-1578321272176-b7bbc0679853?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Abstract Art 3">
+                            <div class="featured-overlay">
+                                <button class="btn-view">Подробнее</button>
+                            </div>
+                        </div>
+                        <div class="featured-info">
+                            <h3 class="featured-title">Геометрические формы</h3>
+                            <p class="featured-price">3 200 ₽</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="gallery">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Полная галерея</h2>
+                    <p class="section-subtitle">Исследуйте нашу коллекцию</p>
+                </div>
+                <div class="gallery-filters">
+                    <button class="filter-btn active" data-filter="all">Все</button>
+                    <button class="filter-btn" data-filter="abstract">Абстракция</button>
+                    <button class="filter-btn" data-filter="minimal">Минимализм</button>
+                    <button class="filter-btn" data-filter="geometric">Геометрия</button>
+                </div>
+                <div class="gallery-grid">
+                    <!-- Gallery items will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">ArtPrints</h3>
+                    <p class="footer-text">Эксклюзивные художественные принты высочайшего качества для вашего дома и офиса.</p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Навигация</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Главная</a></li>
+                        <li><a href="#gallery">Галерея</a></li>
+                        <li><a href="#about">О нас</a></li>
+                        <li><a href="#contact">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Контакты</h4>
+                    <ul class="footer-contacts">
+                        <li>📧 info@artprints.ru</li>
+                        <li>📞 +7 (999) 123-45-67</li>
+                        <li>📍 Москва, Россия</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ArtPrints. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
