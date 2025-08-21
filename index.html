@@ -38,6 +38,9 @@
                 </nav>
 
                 <div class="header-actions">
+                    <button class="theme-toggle" id="themeToggle" title="Переключить тему">
+                        <span class="theme-icon">🌙</span>
+                    </button>
                     <button class="cart-btn">
                         <span class="cart-icon">🛒</span>
                         <span class="cart-count">0</span>
@@ -72,27 +75,69 @@
         <section id="home" class="hero">
             <div class="hero-background">
                 <div class="hero-overlay"></div>
+                <!-- Decorative Elements -->
+                <div class="hero-decoration hero-decoration-1"></div>
+                <div class="hero-decoration hero-decoration-2"></div>
+                <div class="hero-decoration hero-decoration-3"></div>
             </div>
             <div class="container">
                 <div class="hero-content">
                     <div class="hero-text">
+                        <div class="hero-badge">
+                            <span class="badge-text">✨ Премиум коллекция</span>
+                        </div>
                         <h1 class="hero-title">
                             <span class="title-line">Эксклюзивные</span>
                             <span class="title-line">художественные</span>
-                            <span class="title-line">принты</span>
+                            <span class="title-line accent-text">принты</span>
                         </h1>
                         <p class="hero-description">
                             Откройте для себя уникальную коллекцию современного искусства. 
-                            Каждый принт - это произведение искусства высочайшего качества.
+                            Каждый принт - это произведение искусства высочайшего качества, 
+                            созданное талантливыми художниками со всего мира.
                         </p>
+                        <div class="hero-stats">
+                            <div class="stat-item">
+                                <span class="stat-number">500+</span>
+                                <span class="stat-label">Работ</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">50+</span>
+                                <span class="stat-label">Художников</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">1000+</span>
+                                <span class="stat-label">Довольных клиентов</span>
+                            </div>
+                        </div>
                         <div class="hero-buttons">
-                            <a href="#gallery" class="btn btn-primary">Посмотреть галерею</a>
-                            <a href="#about" class="btn btn-outline">Узнать больше</a>
+                            <a href="#gallery" class="btn btn-primary btn-magnetic">
+                                <span>Посмотреть галерею</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </a>
+                            <a href="#about" class="btn btn-outline btn-magnetic">Узнать больше</a>
                         </div>
                     </div>
                     <div class="hero-image">
-                        <div class="hero-image-container">
+                        <div class="hero-image-container image-reveal">
                             <img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2058&q=80" alt="Art Print" class="hero-img">
+                            <div class="image-overlay">
+                                <div class="play-button">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <path d="M8 5V19L19 12L8 5Z" fill="currentColor"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="floating-elements">
+                            <div class="floating-card floating-card-1">
+                                <span class="card-text">Высокое качество</span>
+                            </div>
+                            <div class="floating-card floating-card-2">
+                                <span class="card-text">Быстрая доставка</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -102,6 +147,20 @@
                 <span class="scroll-text">Прокрутите вниз</span>
             </div>
         </section>
+
+        </section>
+
+        <!-- Rotating Scroll Indicator -->
+        <div class="scroll-progress-wrapper">
+            <div class="scroll-progress">
+                <svg class="scroll-progress-circle" width="60" height="60">
+                    <circle cx="30" cy="30" r="25" stroke="currentColor" stroke-width="2" fill="none" opacity="0.3"/>
+                    <circle cx="30" cy="30" r="25" stroke="currentColor" stroke-width="2" fill="none" 
+                            stroke-dasharray="157" stroke-dashoffset="157" class="progress-ring"/>
+                </svg>
+                <div class="scroll-percentage">0%</div>
+            </div>
+        </div>
 
         <!-- Featured Section -->
         <section class="featured">

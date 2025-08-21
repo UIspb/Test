@@ -4,6 +4,73 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize GSAP
     gsap.registerPlugin(ScrollTrigger);
     
+    // Theme Management
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.querySelector('.theme-icon');
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    
+    // Set initial theme
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    updateThemeIcon(currentTheme);
+    
+    // Theme toggle functionality
+    themeToggle.addEventListener('click', function() {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateThemeIcon(newTheme);
+        
+        // Animate theme toggle
+        gsap.to(themeIcon, {
+            rotation: 360,
+            duration: 0.6,
+            ease: "back.out(1.7)"
+        });
+    });
+    
+    function updateThemeIcon(theme) {
+        themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
+    }
+    
+    // Scroll Progress Indicator
+    const scrollProgressWrapper = document.querySelector('.scroll-progress-wrapper');
+    const progressRing = document.querySelector('.progress-ring');
+    const scrollPercentage = document.querySelector('.scroll-percentage');
+    const circumference = 2 * Math.PI * 25; // radius = 25
+    
+    progressRing.style.strokeDasharray = circumference;
+    progressRing.style.strokeDashoffset = circumference;
+    
+    function updateScrollProgress() {
+        const scrollTop = window.pageYOffset;
+        const docHeight = document.body.scrollHeight - window.innerHeight;
+        const scrollPercent = (scrollTop / docHeight) * 100;
+        
+        const offset = circumference - (scrollPercent / 100) * circumference;
+        progressRing.style.strokeDashoffset = offset;
+        scrollPercentage.textContent = Math.round(scrollPercent) + '%';
+        
+        // Show/hide scroll progress indicator
+        if (scrollTop > 300) {
+            scrollProgressWrapper.classList.add('visible');
+        } else {
+            scrollProgressWrapper.classList.remove('visible');
+        }
+    }
+    
+    // Scroll to top when clicking progress indicator
+    scrollProgressWrapper.addEventListener('click', function() {
+        gsap.to(window, {
+            duration: 1.5,
+            scrollTo: 0,
+            ease: "power2.inOut"
+        });
+    });
+    
+    window.addEventListener('scroll', updateScrollProgress);
+    
     // Loading Screen
     const loader = document.querySelector('.loader');
     const loaderLine = document.querySelector('.loader-line');
@@ -255,6 +322,21 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize animations after loading
     function initAnimations() {
+        // Hero badge animation
+        gsap.fromTo('.hero-badge', 
+            { 
+                y: 20,
+                opacity: 0
+            },
+            { 
+                y: 0,
+                opacity: 1,
+                duration: 0.6,
+                delay: 0.2,
+                ease: "power2.out"
+            }
+        );
+
         // Hero title animation
         const titleLines = document.querySelectorAll('.title-line');
         gsap.fromTo(titleLines, 
@@ -267,6 +349,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 opacity: 1,
                 duration: 0.8,
                 stagger: 0.2,
+                delay: 0.4,
                 ease: "power2.out"
             }
         );
@@ -281,7 +364,22 @@ document.addEventListener('DOMContentLoaded', function() {
                 y: 0,
                 opacity: 1,
                 duration: 0.8,
-                delay: 0.6,
+                delay: 0.8,
+                ease: "power2.out"
+            }
+        );
+        
+        // Hero stats animation
+        gsap.fromTo('.hero-stats', 
+            { 
+                y: 30,
+                opacity: 0
+            },
+            { 
+                y: 0,
+                opacity: 1,
+                duration: 0.8,
+                delay: 1.0,
                 ease: "power2.out"
             }
         );
@@ -296,7 +394,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 y: 0,
                 opacity: 1,
                 duration: 0.8,
-                delay: 0.8,
+                delay: 1.2,
                 stagger: 0.2,
                 ease: "power2.out"
             }
@@ -312,7 +410,39 @@ document.addEventListener('DOMContentLoaded', function() {
                 scale: 1,
                 opacity: 1,
                 duration: 1,
-                delay: 0.4,
+                delay: 0.6,
+                ease: "power2.out"
+            }
+        );
+
+        // Floating cards animation
+        gsap.fromTo('.floating-card', 
+            { 
+                scale: 0,
+                opacity: 0
+            },
+            { 
+                scale: 1,
+                opacity: 1,
+                duration: 0.6,
+                delay: 1.4,
+                stagger: 0.2,
+                ease: "back.out(1.7)"
+            }
+        );
+
+        // Hero decorations animation
+        gsap.fromTo('.hero-decoration', 
+            { 
+                scale: 0,
+                opacity: 0
+            },
+            { 
+                scale: 1,
+                opacity: 0.1,
+                duration: 1,
+                delay: 0.8,
+                stagger: 0.3,
                 ease: "power2.out"
             }
         );
